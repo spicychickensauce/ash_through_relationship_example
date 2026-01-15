@@ -26,7 +26,7 @@ defmodule Example.MixProject do
   defp deps do
     [
       {:ash_postgres, "~> 2.0"},
-      {:ash_sqlite, "~> 0.2"},
+      {:ash_sqlite, "~> 0.2.14"},
       {:ash, "~> 3.0"},
       {:igniter, "~> 0.5"}
       # {:dep_from_hexpm, "~> 0.3.0"},
