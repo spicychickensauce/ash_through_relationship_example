@@ -1,7 +1,12 @@
 defmodule Example.World.Country do
-  use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshPostgres.DataLayer
+  # use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshPostgres.DataLayer
+  use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshSqlite.DataLayer
 
-  postgres do
+  # postgres do
+  #   table "countries"
+  #   repo Example.Repo
+  # end
+  sqlite do
     table "countries"
     repo Example.Repo
   end
@@ -44,10 +49,10 @@ defmodule Example.World.Country do
     end
   end
 
-  aggregates do
-    count :city_count, :cities
-    count :landmark_count, :landmarks
-  end
+  # aggregates do
+  #   count :city_count, :cities
+  #   count :landmark_count, :landmarks
+  # end
 
   identities do
     identity :name, [:name]

@@ -1,7 +1,12 @@
 defmodule Example.World.City do
-  use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshPostgres.DataLayer
+  # use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshPostgres.DataLayer
+  use Ash.Resource, otp_app: :example, domain: Example.World, data_layer: AshSqlite.DataLayer
 
-  postgres do
+  # postgres do
+  #   table "cities"
+  #   repo Example.Repo
+  # end
+  sqlite do
     table "cities"
     repo Example.Repo
   end
